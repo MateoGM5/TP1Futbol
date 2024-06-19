@@ -1,4 +1,3 @@
-
 public class Jugador {
 
 	private String nombre;
@@ -8,12 +7,12 @@ public class Jugador {
 	
 	/*============= CONSTRUCTOR =============*/
 	public Jugador(String nombre, String posicion, String numeroCamiseta, int edad) {
-		super();
 		this.nombre = nombre;
 		this.posicion = posicion;
 		this.numeroCamiseta = numeroCamiseta;
 		this.edad = edad;
 	}
+	
 	/*============= GETTERS & SETTERS =============*/
 	public String getNombre() {
 		return nombre;
@@ -50,14 +49,6 @@ public class Jugador {
 	/*============= TOSTRING =============*/
 	@Override
 	public String toString() {
-		return "Jugador [nombre=" + nombre + ", posicion=" + posicion + ", numeroCamiseta=" + numeroCamiseta + ", edad="
-				+ edad + "]";
+		return "Jugador [nombre=" + nombre + ", posicion=" + posicion + ", numeroCamiseta=" + numeroCamiseta + ", edad=" + edad + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 }

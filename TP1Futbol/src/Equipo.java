@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 public class Equipo {
 	
@@ -8,7 +9,6 @@ public class Equipo {
 	
 	/*============= CONSTRUCTOR =============*/
 	public Equipo(String nombre, String ciudad, LinkedList<Jugador> jugadores) {
-		super();
 		this.nombre = nombre;
 		this.ciudad = ciudad;
 		this.jugadores = jugadores;
@@ -46,7 +46,6 @@ public class Equipo {
 	}
 	
 	/*============= FUNCIONES =============*/
-	
 	public void agregarJugador(Jugador jugador) {
 		jugadores.add(jugador);
 	}
@@ -64,14 +63,23 @@ public class Equipo {
 		return null;
 	}
 	
-	public int cantidadJugadores () {
+	public int cantidadJugadores() {
 		return jugadores.size();
 	}
 	
-	public LinkedList<Jugador> listaJugadores(){
+	public LinkedList<Jugador> listaJugadores() {
 		return jugadores;
 	}
-	 
 	
-
+	public static Equipo seleccionarEquipo(LinkedList<Equipo> equipos) {
+		String[] equiposArray = new String[equipos.size()];
+		for (int i = 0; i < equipos.size(); i++) {
+			equiposArray[i] = equipos.get(i).getNombre();
+		}
+		int opcion = JOptionPane.showOptionDialog(null, "Seleccione equipo", null, 0, 0, null, equiposArray, equiposArray[0]);
+		
+		Equipo seleccionado = equipos.get(opcion);
+		equipos.remove(opcion);
+		return seleccionado;
+	}
 }
